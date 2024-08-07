@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flexbox Teaching Tool</title>
+    <style>
+      *{
+        padding:0;
+        margin:0;
+      }
+        body {
+            background-color: #d3e9f5;
+            font-family: Arial, sans-serif;
+          padding:30px;
+        }
+        .container {
+            display: flex;
+            width: 300px;
+            height: 150px;
+            background-color: #4A90E2;
+            margin: 20px auto;
+            padding: 10px;
+        }
+        .box {
+            width: 50px;
+            height: 50px;
+            margin: 5px;
+        }
+        .box-yellow { background-color: yellow; }
+        .box-red { background-color: red; }
+        .box-green { background-color: green; }
+
+        .buttons-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .button {
+            margin: 5px;
+            padding: 10px;
+            background-color: #4A90E2;
+            border: none;
+            cursor: pointer;
+            color: white;
+            width: 200px;
+        }
+        .button:hover {
+            background-color: #357ABD;
+        }
+
+        .direction-buttons {
+            display: flex;
+            justify-content: space-around;
+            width: 300px;
+            margin: 20px auto;
+        }
+        .direction-button {
+            padding: 10px;
+            background-color: #4A90E2;
+            border: none;
+            cursor: pointer;
+            color: white;
+            width: 130px;
+        }
+        .direction-button:hover {
+            background-color: #357ABD;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container" id="flex-container">
+    <div class="box box-yellow"></div>
+    <div class="box box-red"></div>
+    <div class="box box-green"></div>
+</div>
+
+<div class="buttons-container">
+    <button class="button" onclick="changeJustifyContent('flex-start')">Justify-content: start;</button>
+    <button class="button" onclick="changeJustifyContent('center')">Justify-content: center;</button>
+    <button class="button" onclick="changeJustifyContent('flex-end')">Justify-content: end;</button>
+    <button class="button" onclick="changeJustifyContent('space-between')">Justify-content: space-between;</button>
+    <button class="button" onclick="changeJustifyContent('space-around')">Justify-content: space-around;</button>
+    <button class="button" onclick="changeJustifyContent('space-evenly')">Justify-content: space-evenly;</button>
+</div>
+
+<div class="direction-buttons">
+    <button class="direction-button" onclick="changeFlexDirection('row')">Flex-direction: row</button>
+    <button class="direction-button" onclick="changeFlexDirection('column')">Flex-direction: column</button>
+</div>
+
+<script>
+    function changeJustifyContent(value) {
+        document.getElementById('flex-container').style.justifyContent = value;
+    }
+
+    function changeFlexDirection(value) {
+        document.getElementById('flex-container').style.flexDirection = value;
+    }
+</script>
+
+</body>
+</html>
